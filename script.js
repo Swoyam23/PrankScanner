@@ -3,7 +3,6 @@ const startButton = document.getElementById('startVerification');
 const scannerDiv = document.getElementById('scanner');
 const loadingDiv = document.getElementById('loading');
 const resultDiv = document.getElementById('result');
-const finalScreen = document.getElementById('finalScreen');
 
 const funnyImages = [
     'images/funny1.jpg',
@@ -23,11 +22,16 @@ startButton.addEventListener('click', () => {
     setTimeout(() => {
         scannerDiv.classList.add('hidden');
         loadingDiv.classList.remove('hidden');
-    }, 3000);
+        loadingDiv.innerHTML = "<h2>🔍 Scanning Face...</h2>";
+    }, 5000);  // Increased scan time
 
     setTimeout(() => {
-        loadingDiv.innerHTML = "<h2>AI Face Analysis...</h2>";
-    }, 5000);
+        loadingDiv.innerHTML = "<h2>📊 AI Analysis in Progress...</h2>";
+    }, 8000);
+
+    setTimeout(() => {
+        loadingDiv.innerHTML = "<h2>🧠 Deep Learning Model Processing...</h2>";
+    }, 11000);
 
     setTimeout(() => {
         loadingDiv.classList.add('hidden');
@@ -37,10 +41,5 @@ startButton.addEventListener('click', () => {
         resultDiv.innerHTML = `<h2>Verification Complete!</h2>
                                <img src="${randomImage}" alt="Funny Face">
                                <p>Our AI thinks this is your true look! 😂</p>`;
-
-        setTimeout(() => {
-            resultDiv.classList.add('hidden');
-            finalScreen.classList.remove('hidden');
-        }, 4000);
-    }, 7000);
+    }, 15000); // Final reveal after 15 seconds
 });
