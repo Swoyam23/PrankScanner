@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="welcome">
+            <h1>Welcome!</h1>
+            <p>Please verify yourself.</p>
+            <button id="startVerification">Start</button>
+        </div>
+
+        <div id="scanner" class="hidden">
+            <h2>Face Verification</h2>
+            <video id="video" autoplay></video>
+            <p>Align your face in the box...</p>
+        </div>
+
+        <div id="loading" class="hidden">
+            <h2>Verifying...</h2>
+            <p>AI Face Detection in progress...</p>
+        </div>
+
+        <div id="result" class="hidden"></div>
+
+        <div id="finalScreen" class="hidden">
+            <h2>You may enter!</h2>
+            <video id="monkeyDance" autoplay loop>
+                <source src="monkey.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
